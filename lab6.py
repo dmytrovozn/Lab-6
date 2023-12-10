@@ -11,7 +11,7 @@ class StudentAction:
         self.students = []
 
     def save_to_file(self):
-        with open(r'C:\Users\Admin\PycharmProjects\pythonProject\1\user.txt', 'w', encoding='utf-8') as file:
+        with open('user.txt', 'w', encoding='utf-8') as file:
             for student in self.students:
                 file.write(f"{student.name};{','.join(map(str, student.grades))}\n")
     
@@ -41,7 +41,7 @@ class StudentAction:
             print(f"Учень з ім'ям {student_name} не знайдений.")
 
     def load_from_file(self):
-        with open(r'C:\Users\Admin\PycharmProjects\pythonProject\1\user.txt', 'r', encoding='utf-8') as file:
+        with open('user.txt', 'r', encoding='utf-8') as file:
             for line in file:
                 data = line.strip().split(';')
                 name = data[0]
